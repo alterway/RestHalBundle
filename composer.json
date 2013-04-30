@@ -1,0 +1,28 @@
+{
+    "name": "alterway/hal-rest-bundle",
+    "description": "",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {
+            "Alterway\\Bundle\\HalRestBundle": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.2.*"
+    },
+    "require-dev": {
+        "behat/behat":           ">=2.2.2",
+        "behat/common-contexts": "*",
+        "kriswallsmith/buzz":    ">=0.5",
+        "phpunit/phpunit": "3.7.*",
+        "behat/symfony2-extension": "*@stable",
+        "behat/mink-extension": "*",
+        "behat/mink-browserkit-driver": "*",
+        "behat/sahi-client": "v1.0.1",
+        "behat/mink-sahi-driver": "*",
+        "behat/gherkin": "@dev"
+    }, 
+    "minimum-stability": "dev"
+}
