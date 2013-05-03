@@ -2,6 +2,7 @@
 
 namespace Alterway\Bundle\HalRestBundle;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /*
@@ -11,7 +12,12 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * file that was distributed with this source code.
  */
 
-class HalRestBundle extends Bundle
+class AwHalRestBundle extends Bundle
 {
-    
+
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+    }
+
 }

@@ -1,0 +1,8 @@
+demo.user:
+  pattern:   /user/{id}
+  defaults:  { _controller: AlterwayDemoBundle:Test:userWithoutAnnotate, _format: json }
+
+demo.user.annotate:
+  pattern:   /user/annotate/{id}
+  defaults:  { _controller: AlterwayDemoBundle:Test:userWithAnnotate, _format: json }
+  

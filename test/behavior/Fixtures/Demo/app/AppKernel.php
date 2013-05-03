@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__.'/autoload.php';
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 class AppKernel extends Kernel
@@ -13,7 +13,9 @@ class AppKernel extends Kernel
         return array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new Alterway\Bundle\HalRestBundle\HalRestBundle(),
+            new Alterway\Bundle\HalRestBundle\AwHalRestBundle(),
+            new Alterway\DemoBundle\AlterwayDemoBundle(),
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             //new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             //new Symfony\Bundle\AsseticBundle\AsseticBundle()
         );

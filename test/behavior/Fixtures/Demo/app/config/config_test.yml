@@ -16,6 +16,12 @@ twig:
     strict_variables: %kernel.debug%
     cache: false
 
+sensio_framework_extra:
+    router:  { annotations: true }
+    request: { converters: true }
+    view:    { annotations: true }
+    cache:   { annotations: true }
+
 # Assetic Configuration
 #assetic:
 #    debug: %kernel.debug%

@@ -10,12 +10,13 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.2.*"
+        "symfony/symfony": "2.2.*",
+        "sensio/framework-extra-bundle": "2.2.*",
+        "nocarrier/hal": "*"
     },
     "require-dev": {
-        "behat/behat":           ">=2.2.2",
-        "behat/common-contexts": "*",
-        "kriswallsmith/buzz":    ">=0.5",
+        "behat/behat": ">=2.2.2",
+        "kriswallsmith/buzz": ">=0.5",
         "phpunit/phpunit": "3.7.*",
         "behat/symfony2-extension": "*@stable",
         "behat/mink-extension": "*",
@@ -23,6 +24,6 @@
         "behat/sahi-client": "v1.0.1",
         "behat/mink-sahi-driver": "*",
         "behat/gherkin": "@dev"
-    }, 
+    },
     "minimum-stability": "dev"
 }

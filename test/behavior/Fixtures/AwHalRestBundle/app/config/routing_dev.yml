@@ -1,2 +1,0 @@
-aw_halrest:
-    resource: "@AwHalRestBundle/Resources/config/routing.yml"
