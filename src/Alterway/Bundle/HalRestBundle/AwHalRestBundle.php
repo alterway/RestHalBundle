@@ -15,9 +15,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class AwHalRestBundle extends Bundle
 {
 
-    public function build(ContainerBuilder $container)
-    {
-        parent::build($container);
-    }
-
 }
