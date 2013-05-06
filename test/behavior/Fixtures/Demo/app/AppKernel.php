@@ -13,7 +13,7 @@ class AppKernel extends Kernel
         return array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new Alterway\Bundle\HalRestBundle\AwHalRestBundle(),
+            new Alterway\Bundle\RestHalBundle\AwRestHalBundle(),
             new Alterway\DemoBundle\AlterwayDemoBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             //new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
@@ -34,7 +34,7 @@ class AppKernel extends Kernel
     */
     public function getCacheDir()
     {
-        return sys_get_temp_dir() . '/AwHalRestBundle/cache';
+        return sys_get_temp_dir() . '/RestHalBundle/cache';
     }
 
     /**
@@ -42,7 +42,7 @@ class AppKernel extends Kernel
     */
     public function getLogDir()
     {
-        return sys_get_temp_dir() . '/AwHalRestBundle/logs';
+        return sys_get_temp_dir() . '/RestHalBundle/logs';
     }
 
 }

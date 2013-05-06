@@ -6,4 +6,4 @@ php:
 before_script:
   - wget http://getcomposer.org/composer.phar
   - php composer.phar install --dev
-script: ./vendor/bin/behat @AwHalRestBundle
+script: ./vendor/bin/behat @AwRestHalBundle

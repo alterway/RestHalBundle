@@ -1,6 +1,6 @@
 <?php
 
-namespace Alterway\Bundle\HalRestBundle\Controller\Annotations;
+namespace Alterway\Bundle\RestHalBundle\Controller\Annotations;
 
 use Doctrine\Common\Annotations\Annotation;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ConfigurationInterface;

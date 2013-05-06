@@ -1,5 +1,5 @@
 parameters:
-  aw.hal_rest.listener.class: Alterway\Bundle\HalRestBundle\EventListener\ResourceListener
+  aw.hal_rest.listener.class: Alterway\Bundle\RestHalBundle\EventListener\ResourceListener
 
 services:
   

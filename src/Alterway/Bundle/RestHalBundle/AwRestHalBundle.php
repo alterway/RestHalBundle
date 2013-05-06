@@ -1,6 +1,6 @@
 <?php
 
-namespace Alterway\Bundle\HalRestBundle;
+namespace Alterway\Bundle\RestHalBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * file that was distributed with this source code.
  */
 
-class AwHalRestBundle extends Bundle
+class AwRestHalBundle extends Bundle
 {
 
 }

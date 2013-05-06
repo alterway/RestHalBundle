@@ -2,12 +2,12 @@
 
 namespace Alterway\DemoBundle\Controller;
 
-use Alterway\Bundle\HalRestBundle\Response\HalResponse;
+use Alterway\Bundle\RestHalBundle\Response\HalResponse;
 use Alterway\DemoBundle\ApiResource\UserResource;
 use Alterway\DemoBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Alterway\Bundle\HalRestBundle\Controller\Annotations\Hal;
+use Alterway\Bundle\RestHalBundle\Controller\Annotations\Hal;
 
 class TestController extends Controller
 {

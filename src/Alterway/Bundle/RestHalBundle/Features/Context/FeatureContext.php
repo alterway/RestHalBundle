@@ -1,6 +1,6 @@
 <?php
 
-namespace Alterway\Bundle\HalRestBundle\Features\Context;
+namespace Alterway\Bundle\RestHalBundle\Features\Context;
 
 use Behat\Behat\Context\BehatContext;
 use Behat\MinkExtension\Context\MinkContext;

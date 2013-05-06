@@ -1,6 +1,6 @@
 <?php
 
-namespace Alterway\Bundle\HalRestBundle\ApiResource;
+namespace Alterway\Bundle\RestHalBundle\ApiResource;
 
 
 interface ResourceInterface

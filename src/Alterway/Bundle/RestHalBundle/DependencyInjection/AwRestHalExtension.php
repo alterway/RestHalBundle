@@ -1,6 +1,6 @@
 <?php
 
-namespace Alterway\Bundle\HalRestBundle\DependencyInjection;
+namespace Alterway\Bundle\RestHalBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class AwHalRestExtension extends Extension
+class AwRestHalExtension extends Extension
 {
 
     /**
@@ -21,7 +21,7 @@ class AwHalRestExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
 
-        $configuration = new \Alterway\Bundle\HalRestBundle\DependencyInjection\Configuration();
+        $configuration = new \Alterway\Bundle\RestHalBundle\DependencyInjection\Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));

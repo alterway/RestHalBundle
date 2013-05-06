@@ -2,7 +2,7 @@
 
 namespace Alterway\DemoBundle\ApiResource;
 
-use Alterway\Bundle\HalRestBundle\ApiResource\Resource;
+use Alterway\Bundle\RestHalBundle\ApiResource\Resource;
 
 class UserResource extends Resource
 {

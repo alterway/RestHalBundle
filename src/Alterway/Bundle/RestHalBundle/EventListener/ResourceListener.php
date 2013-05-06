@@ -1,10 +1,10 @@
 <?php
 
-namespace Alterway\Bundle\HalRestBundle\EventListener;
+namespace Alterway\Bundle\RestHalBundle\EventListener;
 
-use Alterway\Bundle\HalRestBundle\ApiResource\ResourceInterface;
-use Alterway\Bundle\HalRestBundle\Controller\Annotations\Hal;
-use Alterway\Bundle\HalRestBundle\Response\HalResponse;
+use Alterway\Bundle\RestHalBundle\ApiResource\ResourceInterface;
+use Alterway\Bundle\RestHalBundle\Controller\Annotations\Hal;
+use Alterway\Bundle\RestHalBundle\Response\HalResponse;
 use Doctrine\Common\Annotations\Reader;
 use Doctrine\Common\Util\ClassUtils;
 use ReflectionClass;
@@ -43,7 +43,7 @@ class ResourceListener
         }
 
         $className = ClassUtils::getClass($object);
-        class_exists('\Alterway\Bundle\HalRestBundle\Controller\Annotations\Hal');
+        class_exists('\Alterway\Bundle\RestHalBundle\Controller\Annotations\Hal');
         $reflectionClass = new ReflectionClass($className);
         $reflectionMethod = $reflectionClass->getMethod($method);
         $allAnnotations = $this->reader->getMethodAnnotations($reflectionMethod);

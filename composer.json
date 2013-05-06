@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-0": {
-            "Alterway\\Bundle\\HalRestBundle": "src/"
+            "Alterway\\Bundle\\RestHalBundle": "src/"
         }
     },
     "require": {

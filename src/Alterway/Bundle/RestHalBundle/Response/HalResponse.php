@@ -1,8 +1,8 @@
 <?php
 
-namespace Alterway\Bundle\HalRestBundle\Response;
+namespace Alterway\Bundle\RestHalBundle\Response;
 
-use Alterway\Bundle\HalRestBundle\ApiResource\ResourceInterface;
+use Alterway\Bundle\RestHalBundle\ApiResource\ResourceInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 class HalResponse extends Response implements HalResponseInterface
