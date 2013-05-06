@@ -16,7 +16,7 @@ And run Composer:
 
     php composer.phar update alterway/hal-rest-bundle
 
-Enable tu bundle in your `AppKernel.php`:
+Enable your bundle in your `AppKernel.php`:
 
 ```php
 // app/AppKernel.php
@@ -53,8 +53,8 @@ class UserResource extends Resource
 
     public function prepare()
     {
-        $this->addLink('next', '/orders?page=2');
-        $this->addLink('search', '/orders?id={order_id}');
+        $this->addLink('next', '/users?page=2');
+        $this->addLink('search', '/users?id={user_id}');
     }
 
 }
@@ -65,6 +65,10 @@ class UserResource extends Resource
 #### With annotations:
 
 ```php
+use Alterway\DemoBundle\ApiResource\UserResource;
+
+// (...)
+
 /**
  * @Hal(type="application/hal+json", code="200")
  */
@@ -78,6 +82,11 @@ public function userWithAnnotateAction(Request $request)
 #### Without annotations:
 
 ```php
+use Alterway\Bundle\HalRestBundle\Response\HalResponse;
+use Alterway\DemoBundle\ApiResource\UserResource;
+
+// (...)
+
 public function userWithoutAnnotateAction(Request $request)
 {
     $user = new User;
