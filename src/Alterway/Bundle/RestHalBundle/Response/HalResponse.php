@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HalResponse extends Response implements HalResponseInterface
 {
-
-    public function __construct(ResourceInterface $resource, $status = 200, $headers = array())
+    public function __construct(ResourceInterface $resource, $status = 200)
     {
-        parent::__construct($resource->asJson(), $status, $headers);
+        parent::__construct($resource->asJson(), $status, array(
+            'Content-Type' => 'application/hal+json',
+        ));
     }
-
 }

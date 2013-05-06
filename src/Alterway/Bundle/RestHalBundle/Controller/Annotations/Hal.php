@@ -5,15 +5,9 @@ namespace Alterway\Bundle\RestHalBundle\Controller\Annotations;
 use Doctrine\Common\Annotations\Annotation;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ConfigurationInterface;
 
-/**
- * @Annotation
- * @Target("METHOD")
- */
 class Hal extends Annotation implements ConfigurationInterface
 {
-
-    public $type = 'application/hal+json';
-    public $code = 'code';
+    public $code = 200;
 
     public function allowArray()
     {
@@ -24,5 +18,4 @@ class Hal extends Annotation implements ConfigurationInterface
     {
         return 'hal_rest';
     }
-
 }

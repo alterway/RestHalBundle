@@ -1,15 +1,9 @@
 parameters:
-  aw.hal_rest.listener.class: Alterway\Bundle\RestHalBundle\EventListener\ResourceListener
+    aw.hal_rest.listener.class: Alterway\Bundle\RestHalBundle\EventListener\ResourceListener
 
 services:
-  
     aw.hal_rest.listener:
-      class: %aw.hal_rest.listener.class%
-      arguments: [@annotation_reader]
-      tags:
-        - { name: kernel.event_listener, event: kernel.view, method: onKernelView }
-        - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
-        
-    
-
-    
+        class: %aw.hal_rest.listener.class%
+        arguments: []
+        tags:
+            - { name: kernel.event_listener, event: kernel.view, method: onKernelView }
