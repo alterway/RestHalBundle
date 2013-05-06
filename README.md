@@ -1,4 +1,4 @@
-# HalRestBundle
+# RestHalBundle
 
 Bundle to manage [Hal API](http://stateless.co/hal_specification.html) with Symfony2.
 
@@ -14,7 +14,7 @@ Edit your `composer.json`:
 
 And run Composer:
 
-    php composer.phar update alterway/hal-rest-bundle
+    php composer.phar update alterway/rest-hal-bundle
 
 Enable tu bundle in your `AppKernel.php`:
 
@@ -25,7 +25,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Alterway\Bundle\HalRestBundle\AwHalRestBundle(),
+        new Alterway\Bundle\RestHalBundle\AwRestHalBundle(),
     );
 }
 ```
@@ -41,7 +41,7 @@ For example:
 ```php
 // src/Alterway/DemoBundle/ApiResource/UserResource.php
 namespace Alterway\DemoBundle\ApiResource;
-use Alterway\Bundle\HalRestBundle\ApiResource\Resource;
+use Alterway\Bundle\RestHalBundle\ApiResource\Resource;
 class UserResource extends Resource
 {
 
