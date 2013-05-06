@@ -1,5 +1,5 @@
 {
-    "name": "alterway/hal-rest-bundle",
+    "name": "alterway/rest-hal-bundle",
     "description": "",
     "type": "symfony-bundle",
     "license": "MIT",
