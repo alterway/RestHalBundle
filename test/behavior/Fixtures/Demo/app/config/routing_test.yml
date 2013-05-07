@@ -1,2 +1,2 @@
-aw_halrest:
+aw_demo:
   resource: "@AlterwayDemoBundle/Resources/config/routing.yml"

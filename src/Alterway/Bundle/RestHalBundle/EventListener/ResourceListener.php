@@ -10,10 +10,6 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 class ResourceListener
 {
-    public function __construct()
-    {
-    }
-
     public function onKernelView(GetResponseForControllerResultEvent $event)
     {
         $request = $event->getRequest();
@@ -22,11 +18,11 @@ class ResourceListener
             return;
         }
 
-        if (!$request->attributes->has('_hal_rest')) {
+        if (!$request->attributes->has('_hal_config')) {
             return;
         }
 
-        $annotation = $request->attributes->get('_hal_rest');
+        $annotation = $request->attributes->get('_hal_config');
 
         if (!$annotation instanceof Hal) {
             return;
@@ -39,12 +35,5 @@ class ResourceListener
         }
 
         $event->setResponse(new HalResponse($resource, $annotation->code));
-    }
-
-    public static function getSubscribedEvents()
-    {
-        return array(
-            KernelEvents::VIEW => 'onKernelView',
-        );
     }
 }

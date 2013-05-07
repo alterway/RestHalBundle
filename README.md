@@ -16,6 +16,12 @@ And run Composer:
 
     php composer.phar update alterway/rest-hal-bundle
 
+Add the following line at the end of your `autoload.php`:
+
+```php
+Doctrine\Common\Annotations\AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+```
+
 Enable your bundle in your `AppKernel.php`:
 
 ```php
@@ -40,11 +46,13 @@ For example:
 
 ```php
 // src/Alterway/DemoBundle/ApiResource/UserResource.php
+
 namespace Alterway\DemoBundle\ApiResource;
+
 use Alterway\Bundle\RestHalBundle\ApiResource\Resource;
+
 class UserResource extends Resource
 {
-
     public function __construct(\Symfony\Component\HttpFoundation\Request $request, \Alterway\DemoBundle\Entity\User $user)
     {
         parent::__construct($request);
@@ -56,7 +64,6 @@ class UserResource extends Resource
         $this->addLink('next', '/users?page=2');
         $this->addLink('search', '/users?id={user_id}');
     }
-
 }
 ```
 
@@ -65,12 +72,12 @@ class UserResource extends Resource
 #### With annotations:
 
 ```php
+// some controller or yours
+
 use Alterway\DemoBundle\ApiResource\UserResource;
 
-// (...)
-
 /**
- * @Hal(type="application/hal+json", code="200")
+ * @Hal(code="200")
  */
 public function userWithAnnotateAction(Request $request)
 {
@@ -82,10 +89,10 @@ public function userWithAnnotateAction(Request $request)
 #### Without annotations:
 
 ```php
+// some controller or yours
+
 use Alterway\Bundle\HalRestBundle\Response\HalResponse;
 use Alterway\DemoBundle\ApiResource\UserResource;
-
-// (...)
 
 public function userWithoutAnnotateAction(Request $request)
 {
@@ -99,11 +106,11 @@ public function userWithoutAnnotateAction(Request $request)
 
 Install dev dependencies:
 
-    php composer.phar update --dev
+    php composer.phar update
 
 Run Behat:
 
-    ./vendor/bin/behat @AwHalRestBundle
+    ./vendor/bin/behat @AwRestHalBundle
 
 ## Copyright
 
@@ -112,6 +119,7 @@ Copyright (c) 2013 Jean-François Lépine (Halleck45). See LICENSE for details.
 ##  Contributors
 
 + Jean-François Lépine (Halleck45)
++ Benoît Merlet (trompette)
 
 ## Sponsors
 

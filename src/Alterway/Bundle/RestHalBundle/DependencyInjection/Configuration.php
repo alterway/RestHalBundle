@@ -19,7 +19,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('aw_hal_rest');
+        $rootNode = $treeBuilder->root('aw_rest_hal');
         $rootNode
             ->children()
                 ->scalarNode('format')
