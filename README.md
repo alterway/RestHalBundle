@@ -67,7 +67,7 @@ class UserResource extends Resource
 
     protected function generateUri()
     {
-        return "url to generate the hal resource's self link";
+        return "url to generate for the hal resource's self link";
     }
 }
 ```
