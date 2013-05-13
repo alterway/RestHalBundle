@@ -6,14 +6,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 abstract class Resource implements ResourceInterface
 {
-
     protected $hal;
-    protected $request;
 
-    public function __construct(Request $request)
+    public function __construct()
     {
-        $this->hal = new ProxyResource($request->getRequestUri());
-        $this->request = $request;
+        $this->hal = new ProxyResource($this->generateUri());
     }
 
     public function addLink($rel, $uri, $title = null, array $attributes = array())
@@ -42,15 +39,15 @@ abstract class Resource implements ResourceInterface
 
     public function asJson($pretty = false)
     {
-        $this->prepare();
-        return $this->hal->asJson($pretty);
+        return $this->getHal()->asJson($pretty);
     }
-
-    abstract protected function prepare();
 
     public function getHal()
     {
+        $this->prepare();
         return $this->hal;
     }
 
+    abstract protected function prepare();
+    abstract protected function generateUri();
 }
