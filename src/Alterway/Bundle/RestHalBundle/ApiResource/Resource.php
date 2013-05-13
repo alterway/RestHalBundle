@@ -3,13 +3,23 @@
 namespace Alterway\Bundle\RestHalBundle\ApiResource;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\RouterInterface;
 
 abstract class Resource implements ResourceInterface
 {
+    /**
+     * @var ProxyResource
+     */
     protected $hal;
 
-    public function __construct()
+    /**
+     * @var RouterInterface
+     */
+    protected $router;
+
+    public function __construct(RouterInterface $router)
     {
+        $this->router = $router;
         $this->hal = new ProxyResource($this->generateUri());
     }
 
