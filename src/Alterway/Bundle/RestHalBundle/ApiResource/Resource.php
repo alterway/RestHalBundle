@@ -6,14 +6,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 abstract class Resource implements ResourceInterface
 {
-
     protected $hal;
-    protected $request;
 
-    public function __construct(Request $request)
+    public function __construct()
     {
         $this->hal = new ProxyResource($this->generateUri());
-        $this->request = $request;
     }
 
     public function addLink($rel, $uri, $title = null, array $attributes = array())
