@@ -120,6 +120,7 @@ Copyright (c) 2013 Jean-François Lépine (Halleck45). See LICENSE for details.
 
 + Jean-François Lépine (Halleck45)
 + Benoît Merlet (trompette)
++ Antoine Lévêque (gh0stonio)
 
 ## Sponsors
 

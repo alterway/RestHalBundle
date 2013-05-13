@@ -12,7 +12,7 @@ abstract class Resource implements ResourceInterface
 
     public function __construct(Request $request)
     {
-        $this->hal = new ProxyResource($request->getRequestUri());
+        $this->hal = new ProxyResource($this->generateUri());
         $this->request = $request;
     }
 
@@ -42,15 +42,15 @@ abstract class Resource implements ResourceInterface
 
     public function asJson($pretty = false)
     {
-        $this->prepare();
-        return $this->hal->asJson($pretty);
+        return $this->getHal()->asJson($pretty);
     }
-
-    abstract protected function prepare();
 
     public function getHal()
     {
+        $this->prepare();
         return $this->hal;
     }
 
+    abstract protected function prepare();
+    abstract protected function generateUri();
 }

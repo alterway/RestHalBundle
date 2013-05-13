@@ -19,4 +19,8 @@ class UserResource extends Resource
         $this->addLink('search', '/orders?id={order_id}');
     }
 
+    protected function generateUri()
+    {
+        return "url to generate";
+    }
 }
