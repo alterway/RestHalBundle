@@ -3,13 +3,15 @@
 namespace Alterway\DemoBundle\ApiResource;
 
 use Alterway\Bundle\RestHalBundle\ApiResource\Resource;
+use Alterway\DemoBundle\Entity\User;
+use Symfony\Component\Routing\RouterInterface;
 
 class UserResource extends Resource
 {
 
-    public function __construct(\Alterway\DemoBundle\Entity\User $user)
+    public function __construct(RouterInterface $router, User $user)
     {
-        parent::__construct();
+        parent::__construct($router);
         $this->user = $user;
     }
 
@@ -21,6 +23,6 @@ class UserResource extends Resource
 
     protected function generateUri()
     {
-        return "url to generate the hal resource's self link";
+        return $this->router->generate('demo.user', array('id' => 1));
     }
 }

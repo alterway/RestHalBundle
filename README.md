@@ -53,9 +53,9 @@ use Alterway\Bundle\RestHalBundle\ApiResource\Resource;
 
 class UserResource extends Resource
 {
-    public function __construct(\Alterway\DemoBundle\Entity\User $user)
+    public function __construct(RouterInterface $router, User $user)
     {
-        parent::__construct();
+        parent::__construct($router);
         $this->user = $user;
     }
 
@@ -67,7 +67,7 @@ class UserResource extends Resource
 
     protected function generateUri()
     {
-        return "url to generate for the hal resource's self link";
+        return $this->router->generate('demo.user', array('id' => 1));
     }
 }
 ```
@@ -75,6 +75,14 @@ class UserResource extends Resource
 ### Controller
 
 #### With annotations:
+
+Remember to enable annotations :
+
+    sensio_framework_extra:
+    router:  { annotations: true }
+    request: { converters: true }
+    view:    { annotations: true }
+    cache:   { annotations: true }
 
 ```php
 // some controller or yours
@@ -87,7 +95,7 @@ use Alterway\DemoBundle\ApiResource\UserResource;
 public function userWithAnnotateAction(Request $request)
 {
     $user = new User;
-    return new UserResource($user);
+    return new UserResource($this->get('router'), $user);
 }
 ```
 
@@ -102,7 +110,7 @@ use Alterway\DemoBundle\ApiResource\UserResource;
 public function userWithoutAnnotateAction(Request $request)
 {
     $user = new User;
-    $resource = new UserResource($user);
+    $resource = new UserResource($this->get('router'), $user);
     return new HalResponse($resource, 200);
 }
 ```
