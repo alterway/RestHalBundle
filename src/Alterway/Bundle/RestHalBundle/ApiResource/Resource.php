@@ -20,7 +20,7 @@ abstract class Resource implements ResourceInterface
     public function __construct(RouterInterface $router)
     {
         $this->router = $router;
-        $this->hal = new ProxyResource($this->generateUri());
+        $this->hal = new ProxyResource();
     }
 
     public function addLink($rel, $uri, $title = null, array $attributes = array())
@@ -55,6 +55,7 @@ abstract class Resource implements ResourceInterface
     public function getHal()
     {
         $this->prepare();
+        $this->setUri($this->generateUri());
         return $this->hal;
     }
 
