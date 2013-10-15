@@ -23,9 +23,11 @@ abstract class Resource implements ResourceInterface
         $this->hal = new ProxyResource();
     }
 
-    public function addLink($rel, $uri, $title = null, array $attributes = array())
+    public function addLink($rel, $route, array $routeParams = array(), array $attributes = array())
     {
-        $this->hal->addLink($rel, $uri, $title, $attributes);
+        $methods = $this->router->getRouteCollection()->get($route)->getMethods();
+        $this->hal->addLink($rel, $this->generate($route, $routeParams), null,
+            array_merge($attributes, array('method' => reset($methods))));
         return $this;
     }
 
@@ -34,6 +36,13 @@ abstract class Resource implements ResourceInterface
         $this->hal->addResource($rel, $resource->getHal());
         return $this;
     }
+
+    public function addSingleResource($rel, ResourceInterface $resource = null)
+    {
+        $this->hal->addSingleResource($rel, $resource->getHal());
+        return $this;
+    }
+
 
     public function setData(array $data)
     {
@@ -57,6 +66,11 @@ abstract class Resource implements ResourceInterface
         $this->prepare();
         $this->setUri($this->generateUri());
         return $this->hal;
+    }
+
+    public function generate($title, $params)
+    {
+        return $this->router->generate($title, $params);
     }
 
     abstract protected function prepare();
