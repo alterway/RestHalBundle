@@ -12,7 +12,7 @@
         "php": ">=5.3.3",
         "symfony/symfony": "~2.2",
         "sensio/framework-extra-bundle": "~2.2",
-        "nocarrier/hal": "*"
+        "nocarrier/hal": "0.9.2"
     },
     "require-dev": {
         "behat/behat": ">=2.2.2",
