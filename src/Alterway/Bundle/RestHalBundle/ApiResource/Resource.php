@@ -5,7 +5,6 @@ namespace Alterway\Bundle\RestHalBundle\ApiResource;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
 
-
 abstract class Resource implements ResourceInterface
 {
     /**
@@ -26,15 +25,8 @@ abstract class Resource implements ResourceInterface
 
     public function addLink($rel, $route, array $routeParams = array(), array $attributes = array())
     {
-        $generatedRoute = $this->generate($route, $routeParams);
-        $methods = $this->router->getRouteCollection()->get($route)->getMethods();
-        $this->hal->addLink(
-            $rel,
-            $generatedRoute,
-            null,
-            array_merge($attributes, array('method' => reset($methods)))
-        );
-
+        $this->hal->addLink($rel, $this->generate($route, $routeParams), null,
+            array_merge($attributes, array('method' => reset($this->router->getRouteCollection()->get($route)->getMethods()))));
         return $this;
     }
 
