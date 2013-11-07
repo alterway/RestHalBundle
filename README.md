@@ -127,7 +127,7 @@ Run Behat:
 
 ## Copyright
 
-Copyright (c) 2013 Jean-François Lépine (Halleck45). See LICENSE for details.
+Copyright (c) 2013 La Ruche Qui Dit Oui!. See LICENSE for details.
 
 ##  Contributors
 
@@ -138,3 +138,4 @@ Copyright (c) 2013 Jean-François Lépine (Halleck45). See LICENSE for details.
 ## Sponsors
 
 + [Alter Way](http://www.alterway.fr)
++ [La Ruche Qui Dit Oui !](http://www.laruchequiditoui.fr)

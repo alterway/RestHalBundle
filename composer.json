@@ -1,8 +1,28 @@
 {
     "name": "alterway/rest-hal-bundle",
-    "description": "",
+    "description": "manage HAL Rest API with Symfony2 http://stateless.co/hal_specification.html",
     "type": "symfony-bundle",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "La Ruche Qui Dit Oui!",
+            "email": "contact@laruchequiditoui.fr",
+            "homepage": "http://www.laruchequiditoui.fr/",
+            "role": "Copyright Holder"
+        },
+        {
+            "name": "Alter Way",
+            "email": "contact@alterway.fr",
+            "homepage": "http://www.alterway.fr",
+            "role": "Developer"
+        },
+        {
+            "name": "Jean-François Lépine",
+            "email": "jean-francois.lepine@alterway.fr",
+            "homepage": "https://www.twitter.com/Halleck45",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-0": {
             "Alterway\\Bundle\\RestHalBundle": "src/"
