@@ -32,7 +32,7 @@
         "php": "~5.3",
         "symfony/symfony": "~2.2",
         "sensio/framework-extra-bundle": "~2.2",
-        "nocarrier/hal": "~0.9"
+        "nocarrier/hal": "~0.9.4"
     },
     "require-dev": {
         "behat/behat": "~2.5",
