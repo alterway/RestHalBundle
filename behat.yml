@@ -1,9 +1,6 @@
 default:
-  formatter:
-    name: pretty
   extensions:
     Behat\Symfony2Extension\Extension:
-      mink_driver: true
       kernel:
         env: test
         debug: true

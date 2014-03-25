@@ -29,19 +29,19 @@
         }
     },
     "require": {
-        "php": "~5.3",
-        "symfony/symfony": "~2.2",
-        "sensio/framework-extra-bundle": "~2.2",
+        "php": ">=5.4.0",
+        "symfony/symfony": "~2.4",
+        "sensio/framework-extra-bundle": "~3.0",
         "nocarrier/hal": "~0.9.4"
     },
     "require-dev": {
-        "behat/behat": "~2.5",
-        "behat/gherkin": "~2.3",
-        "behat/mink-browserkit-driver": "~1.1",
-        "behat/mink-extension": "~1.2",
-        "behat/mink-sahi-driver": "~1.1",
-        "behat/symfony2-extension": "~1.1",
-        "kriswallsmith/buzz": "~0.5",
+        "behat/behat": "3.0.*@dev",
+        "behat/gherkin": "4.0.*@dev",
+        "behat/mink-browserkit-driver": "v1.1.0",
+        "behat/mink-extension": "2.0.*@dev",
+        "behat/mink-sahi-driver": "1.2.*@dev",
+        "behat/symfony2-extension": "2.0.*@dev",
+        "kriswallsmith/buzz": "v0.8",
         "phpunit/phpunit": "3.7.*"
     }
 }
